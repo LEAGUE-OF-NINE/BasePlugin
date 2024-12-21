@@ -57,8 +57,8 @@
     </ItemGroup>
 
     <Target Name="CopyFile" AfterTargets="build">
-        <Message Text="Copying BIE files..." Importance="high" Condition="'$(Configuration)' == 'BIE'" />
-        <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(OutputPath)\BepInEx\plugins" Condition="'$(Configuration)' == 'BIE'" />
-        <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(LimbusCompanyFolder)\BepInEx\plugins" Condition="'$(Configuration)' == 'BIE'" />
+        <Message Text="Copying BIE files..." Importance="high"/>
+        <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(OutputPath)\BepInEx\plugins"/>
+        <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(LimbusCompanyFolder)\BepInEx\plugins"/>
     </Target>
 </Project>
