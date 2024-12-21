@@ -10,6 +10,7 @@
         <LangVersion>10.0</LangVersion>
         <IsPublishable>True</IsPublishable>
         <TargetFramework>net472</TargetFramework>
+        <SelfContained>true</SelfContained>
         <Platforms>x64</Platforms>
         <Configurations>BIE</Configurations>
         <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
@@ -19,11 +20,6 @@
         <Optimize>True</Optimize>
         <RootNamespace>CustomEncounter</RootNamespace>
     </PropertyGroup>
-    <ItemGroup>
-      <Compile Remove="CustomStatus\**" />
-      <EmbeddedResource Remove="CustomStatus\**" />
-      <None Remove="CustomStatus\**" />
-    </ItemGroup>
 
     <!-- ~~~~~ CONFIGURATIONS ~~~~~ -->
     <ItemGroup>
@@ -31,9 +27,8 @@
     </ItemGroup>
 
     <!-- BepinEx -->
-    <PropertyGroup Condition="'$(Configuration)'=='BIE'">
-        <DefineConstants>BIE</DefineConstants>
-        <AssemblyName>$(MSBuildProjectName)_$(Configuration)</AssemblyName>
+    <PropertyGroup>
+        <AssemblyName>$(MSBuildProjectName)</AssemblyName>
     </PropertyGroup>
 
     <!-- ~~~~~ NUGET ~~~~~ -->
@@ -45,7 +40,7 @@
 
     <!-- ~~~~~ ASSEMBLY REFERENCES ~~~~~ -->
     <!-- BepinEx -->
-    <ItemGroup Condition="'$(Configuration)'=='BIE'">
+    <ItemGroup>
         <Reference Include="System.Runtime" />
         <Reference Include="$(LimbusCompanyFolder)\BepInEx\core\*.dll">
             <HintPath>%(Identity)</HintPath>
