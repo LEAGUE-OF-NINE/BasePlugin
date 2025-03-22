@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
-using static BepInEx.EnableResize;
+using static BaseMod.Main; // Change this
 
-[assembly: AssemblyTitle(GUID)]
-[assembly: AssemblyDescription(PluginName)]
-[assembly: AssemblyProduct(GUID)]
-[assembly: AssemblyVersion(PluginVersion)]
-[assembly: AssemblyFileVersion(PluginVersion)]
+[assembly: AssemblyTitle(Guid)]
+[assembly: AssemblyDescription(Name)]
+[assembly: AssemblyProduct(Guid)]
+[assembly: AssemblyVersion(Version)]
+[assembly: AssemblyFileVersion(Version)]
